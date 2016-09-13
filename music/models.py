@@ -13,6 +13,7 @@ class Song(models.Model):
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
     file_type = models.CharField(max_length=10)
     song_title = models.CharField(max_length=250)
+    is_favourite = models.BooleanField(default=False)
 
     def __str__(self):
         return "song_title: {0} file_type: {1}".format(self.song_title, self.file_type)
