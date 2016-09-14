@@ -9,3 +9,8 @@ body {
 .navbar-brand {
   font-family: 'Sastify', cursive;
 }
+
+.album_photos_detail {
+  width: 300px;
+  height: 300px;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}Viiber{% endblock %}</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% load static %}
+
+    <!-- fonts sections  -->
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+
+    <!-- BootStrap Twitter -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'music/styles.css' %}" />
+
+  </head>
+
+
+<body>
+
+  <!-- Navigation bar, our menu  -->
+  <nav id="main-menu" class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle"collapse" data-target="#top-nav-bar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{% url 'music:index' %}">Viiber</a>
+        </div>
+
+        <!-- items -->
+        <div id="top-nav-bar" class="collapse navbar-collapse">
+
+          <!-- Menu -->
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="{% url 'music:index' %}"><span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp;Albums</a></li>
+            <li class=""><a href="#"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>&nbsp;Songs</a></li>
+          </ul>
+
+          <!-- Rsearch Bar -->
+          <form class="navbar-form navbar-left" role="search" method="get" action="#">
+            <div class="form-group">
+              <input type="text" class="form-control" name="q" value="" />
+              <button type="submit" class="btn btn-default">Search</button>
+            </div>
+          </form>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp;Logout</a>
+            </li>
+          </ul>
+
+        </div>
+
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    {% block body %}
+    {% endblock %}
+  </div>
+
+
+  <!-- Scripts Javascripts to load -->
+  <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+
+
+
+</html>
